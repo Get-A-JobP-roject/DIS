@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+.mypage-box {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    padding-right: .9375rem;
+    padding-left: .9375rem;
+}
+
+.mypage-title {
+    font-weight: 500;
+    line-height: 1.41;
+    letter-spacing: -.0462rem;
+    color: #323232;
+    margin: 0;
+    font-size: 1.5rem;
+    padding: 1.875rem 0;
+}
+
+.mypage-header-box {
+    font-size: 0;
+    position: relative;
+    background-color: #fff;
+    z-index: 3;
+    border-bottom: .0625rem solid;
+    border-color: #f2f2f2;
+}
+
+.mypage-header-box a {
+    display: flex;
+    align-items: center;
+}
+
+.mypage-profile-box {
+    width: 4.375rem;
+    height: 4.375rem;
+    min-width: 4.375rem;
+    overflow: hidden;
+}
+
+.mypage-header-container {
+    margin-bottom: 1.375rem;
+}
+
+.mypage-profile-container {
+    position: relative;
+    height: 100%;
+}
+
+.mypage-profile-size {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: .0625rem solid #f2f2f2;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-color: #e1e1e1;
+}
+
+.mypage-profile {
+    background-image: url("/static/image/t_3d27c205-0606-49cf-9835-23e4cc5ee1dc_original.jpg");
+}
+
+.mypage-name-box {
+    flex: 1;
+    overflow: hidden;
+    text-align: left;
+    padding-left: .75rem;
+}
+
+.mypage-name-container {
+    display: flex;
+    flex: 1;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #323232;
+}
+
+.mypage-name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: .3125rem;
+}
+
+.mypage-text {
+    flex: 0 0 auto;
+}
+
+.mypage-account-setting-button {
+    display: inline-block;
+    line-height: 1.5;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    border-radius: 12px;
+    background-color: #f2f2f2;
+    padding: .25rem .625rem;
+    font-size: .75rem;
+    color: #737373;
+    font-weight: 500;
+}
+
+.mypage-menu-ul {
+    border-bottom: .0625rem solid;
+    border-color: #f2f2f2;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mypage-main-menu {
+    display: flex;
+    align-items: center;
+    padding: .75rem 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #323232;
+}
+
+.mypage-sub-menu {
+    padding: 1rem 0;
+}
+
+.mypage-sub-menu a {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.mypage-sub-content-box {
+    flex: auto;
+    text-align: left;
+}
+
+.mypage-sub-content-container {
+    display: flex;
+    align-items: center;
+}
+
+.mypage-sub-content-arrow-box {
+    font-size: 0;
+}
+
+.mypage-sub-content-arrow-container {
+    font-size: .75rem;
+}
+
+.mypage-sub-content-arrow-container img {
+    width: 18px;
+    height: 18px;
+}
+
+@media (min-width: 768px) {
+    .mypage-box {
+        max-width: 39.375rem;
+    }
+
+    .mypage-title {
+        font-size: 2.125rem;
+        padding: 3.125rem 0;
+    }
+
+    .mypage-header-box {
+        padding: 1rem 0;
+        margin-bottom: 1.25rem;
+    }
+
+    .mypage-name .mypage-text {
+        padding-right: 1.5rem;
+    }
+
+    .mypage-header-container {
+        margin-bottom: .5rem;
+    }
+
+    .mypage-menu-ul {
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .mypage-box {
+        max-width: 33.75rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .mypage-box {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

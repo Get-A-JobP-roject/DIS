@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+.management-content-title-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #737373;
+    font-size: 14px;
+}
+
+.management-modify-button {
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    background-color: transparent;
+    border-radius: 4px;
+    width: initial;
+    padding: 0;
+    color: #00C7AE;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.management-value-box {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #F2F2F2;
+    font-size: 16px;
+}
+
+.management-value {
+    display: -webkit-box;
+    max-height: 1.5em;
+    line-height: 1.5;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.management-input {
+    width: 100%;
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+.management-button-box {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.cancel-button {
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    user-select: none;
+    border-color: rgb(225, 225, 225);
+    background-color: transparent;
+    padding: 8px 0px;
+    width: 120px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    color: rgb(50, 50, 50);
+}
+
+.accept-button {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    padding: 8px 0px;
+    width: 120px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(181, 181, 181);
+    color: rgb(255, 255, 255);
+}
+
+.management-li {
+    margin-bottom: 1.3rem;
+}
+
+.distributor-introduce {
+    width: 100%;
+    background: none;
+    border: none;
+    resize: none;
+    outline: none;
+    overflow: auto;
+}
+
+.management-address-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.address-input {
+    flex: 1;
+    background: none;
+}
+
+.address-button {
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    user-select: none;
+    padding : 3px 0;
+    border-color: rgb(225, 225, 225);
+    background-color: transparent;
+    width: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    color: rgb(50, 50, 50);
+}
+
+.management-time-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.select-box {
+    position : relative;
+    width: 100px;
+    height: 30px;
+    background-color: bisque;
+    border : none;
+    border-radius: 8px;
+    text-align: center;
+    outline: none;
+}
+
+.management-time-box {
+    margin-top: 1.5rem;
+}
+
+.distributor-introduce::-webkit-scrollbar {
+    width: 1px;
+}

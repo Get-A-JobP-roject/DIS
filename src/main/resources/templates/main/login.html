@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main/header.css">
+    <link rel="stylesheet" href="/css/login/login.css">
+    <link rel="icon" href="/image/favicon.png">
+    <title>로그인 화면</title>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="login-box">
+                <th:block th:replace="~{main/header :: header}"></th:block>
+                <div class="login-container">
+                    <div class="login-logo-box">
+                        <img src="/image/logo.png">
+                    </div>
+                    <div class="login-input-box">
+                        <div class="select-login-box">
+                            <div class="select-login-container">
+                                <button class="select-login-button select-login-button-active select-member">일반 로그인</button>
+                                <button class="select-login-button select-distributor">유통업체 로그인</button>
+                            </div>
+                        </div>
+                        <form th:action="@{/member/member-login}" method="post" class="login-form">
+                            <!-- 일반 사용자 로그인 -->
+                            <div class="login-form-box member-login">
+                                <div class="login-form-container">
+                                    <fieldset class="login-form-group">
+                                        <legend class="input-title">아이디</legend>
+                                        <div>
+                                            <input type="text" class="input-text input-identification" name="memberIdentification"
+                                                placeholder="아이디를 입력해주세요.">
+                                            <div class="error-msg id-error"></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="login-form-container">
+                                    <fieldset class="login-form-group">
+                                        <legend class="input-title">비밀번호</legend>
+                                        <div>
+                                            <input type="password" class="input-text input-password" name="memberPassword"
+                                                placeholder="비밀번호를 입력해주세요.">
+                                            <div class="error-msg password-error"></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="login-form-container">
+                                    <button class="login-button">로그인</button>
+                                </div>
+                            </div>
+
+
+                            <!-- 유통업체 로그인 -->
+                            <div class="login-form-box distributor-login">
+                                <div class="login-form-container">
+                                    <fieldset class="login-form-group">
+                                        <legend class="input-title">이메일</legend>
+                                        <div>
+                                            <input type="text" class="input-text input-email" name="distributorEmail"
+                                                placeholder="이메일을 입력해주세요." >
+                                            <div class="error-msg email-error"></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="login-form-container">
+                                    <fieldset class="login-form-group">
+                                        <legend class="input-title">비밀번호</legend>
+                                        <div>
+                                            <input type="password" class="input-text input-password" name="distributorPassword"
+                                                placeholder="비밀번호를 입력해주세요.">
+                                            <div class="error-msg password-error"></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="login-form-container">
+                                    <button type="submit" class="login-button">로그인</button>
+                                </div>
+                            </div>
+
+                            <!-- 아이디  찾기 / 비밀번호 찾기 /  회원가입 -->
+                            <div class="login-form-container find-box">
+                                <div class="find-container">
+                                    <a href="#" >아이디 찾기</a>
+                                    <div class="line"></div>
+                                    <a href="#" >비밀번호 찾기</a>
+                                    <div class="line"></div>
+                                    <a href="/member/member-join" >회원 가입</a>
+                                </div>
+                            </div>
+
+                            <div class="login-form-container">
+                                <button type="button" class="oauth-button oauth-button-kakao" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=ff04d75665b07543e607a0122abcd22d&redirect_uri=http://localhost:10000/member/kakao-login&response_type=code'">
+                                    <img src="/image/comment-bubble-icon.png">
+                                    <p>카카오로 시작</p>
+                                </button>
+                            </div>
+                            <div class="login-form-container">
+                                <button class="oauth-button oauth-button-naver">
+                                    <p>네이버로 시작</p>
+                                </button>
+                            </div>
+                            <div class="login-form-container">
+                                <button class="oauth-button oauth-button-facebook">
+                                    <p>페이스북으로 시작</p>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="/js/main/header.js"></script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const memberJoinSuccess = urlParams.get('memberJoinSuccess');
+
+    if (memberJoinSuccess) {
+        if (memberJoinSuccess === 'true') {
+            alert("회원가입 성공");
+        }
+    }
+
+</script>
+<script src="/js/main/login.js"></script>
+</html>

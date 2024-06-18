@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main/header.css">
+    <link rel="icon" href="/image/favicon.png">
+    <title>헤더</title>
+</head>
+<body>
+    <div class="header-box" th:fragment="header">
+        <div class="header-container">
+            <div class="header-section-box">
+                <div class="header-mobile-box">
+                    <div class="header-mobile-menu-icon-box menu-open-btn">
+                        <img src="/image/menu-icon.png">
+                    </div>
+                </div>
+                <div class="logo-box">
+                    <div class="logo-container">
+                        <a th:href="@{/main/login}">
+                            <img class="header-logo" src="/image/logo.png">
+                        </a>
+                    </div>
+                    <div class="header-web-menu-box">
+                        <nav>
+                            <ul class="header-menu-box">
+                                <li class="header-menu-container"><a href="#"><span>유통업체 게시판</span></a></li>
+                                <li class="header-menu-container"><a href="#"><span>자유 게시판</span></a></li>
+                                <li class="header-menu-container"><a href="#"><span>문의 게시판</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- 로그인 x -->
+                <th:block th:if="${#strings.isEmpty(session.memberId)} and ${#strings.isEmpty(session.distributorId)}">
+                <div class="header-login-join-button-box no-login-status">
+                    <div class="header-login-join-box">
+                        <ul class="header-login-join-ul">
+                            <li class="header-login-join-li"><a th:href="@{/main/login}"><span>로그인</span></a></li>
+                            <li class="header-login-join-li"><a th:href="@{/member/join}"><span>회원가입</span></a></li>
+                        </ul>
+                    </div>
+                    <button class="header-distributor-join-button btn">
+                        <a href="#">유통업체 가입</a>
+                    </button>
+                </div>
+                </th:block>
+                <!-- 로그인 o -->
+                <th:block th:unless="${not #strings.isEmpty(session.memberId)} or ${not #strings.isEmpty(session.distributorId)}">
+                <div class="header-login-join-button-box login-status">
+                    <div class="header-login-join-box">
+                        <div>
+                            <ul class="header-login-join-ul">
+                                <li class="header-login-join-li"><a href="#"><span>쪽지</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="header-message-bell-box">
+                            <button class="header-message-bell-button">
+                                <img class="normal-bell" src="/image/bell-icon.png">
+                            </button>
+                        </div>
+                        <div class="header-member-menu-box">
+                            <div class="header-member-menu-container">
+                                <div class="header-member-picture-box">
+                                    <div class="header-member-picture"></div>
+                                </div>
+                                <img class="header-member-picture-arrow"src="/image/down-arrow-icon.png">
+                            </div>
+                            <div class="header-member-menu-dropdown">
+                                <div class="header-member-info-box">
+                                    <h4 class="header-member-name">xxx고객님 환영</h4>
+                                </div>
+                                <ul class="header-member-login-menu-ul">
+                                    <li class="header-member-login-menu-li">
+                                        <div>쪽지함</div>
+                                    </li>
+                                    <li class="header-member-login-menu-li">
+                                        <div>마이페이지</div>
+                                    </li>
+                                </ul>
+                                <div class="header-logout-button-box">
+                                    <button>로그아웃</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </th:block>
+
+
+                <div class="header-mobile-member-menu-box">
+                    <div class="header-mobile-member-menu-container member-menu-open">
+                        <div class="member-menu-header-box">
+                            <button class="member-menu-out-button">
+                                <img class="member-menu-out-button-img" src="/image/x-icon.png">
+                            </button>
+                        </div>
+                        <div class="member-menu-body-box">
+                            <!-- 로그인 x -->
+                            <div class="member-menu-login-box no-login-status" >
+                                <div class="no-login-box" >
+                                    <h4>로그인 해주세요</h4>
+                                    <p class="member-menu-login-button">로그인
+                                        <img src="/image/arrow-icon.png">
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- 로그인 o -->
+                            <div class="member-menu-login-box login-status"  style="display: none;">
+                                <div class="no-login-box" style="display: none;">
+                                    <h4>로그인 해주세요</h4>
+                                    <p class="member-menu-login-button">로그인
+                                        <img src="/image/arrow-icon.png">
+                                    </p>
+                                </div>
+                                <div class="login-box">
+                                    <h4 class="name member-name distributor-name">
+                                        <h4 class="">xxx 고객님</h4>
+                                    </h4>
+                                    <p>안녕하세요</p>
+                                </div>
+                                <div class="member-profile-box">
+                                    <div class="member-profile-container">
+                                        <div class="member-profile"></div>
+                                    </div>
+                                </div>
+                                <div class="member-control-box">
+                                    <div class="member-control-container">
+                                        <div class="member-menu-logout-button-box menu-button-box">
+                                            <button class="member-menu-logout-button menu-button">
+                                                로그아웃
+                                            </button>
+                                        </div>
+                                        <div class="member-menu-message-button-box menu-button-box">
+                                            <button class="member-menu-logout-button menu-button">
+                                                쪽지함
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-menu-list-box">
+                                <ul class="member-menu-list-container login-status">
+                                    <li class="member-menu-list-li"><a href="#"><span>관심업체</span></a></li>
+                                    <li class="member-menu-list-li"><a href="#"><span>마이페이지</span></a></li>
+                                </ul>
+                                <ul class="member-menu-list-container">
+                                    <li class="member-menu-list-li"><a href="#"><span>유통업체 게시판</span></a></li>
+                                    <li class="member-menu-list-li"><a href="#"><span>자유 게시판</span></a></li>
+                                    <li class="member-menu-list-li"><a href="#"><span>문의 게시판</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-menu-backgroud"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="/js/main/header.js"></script>
+</html>

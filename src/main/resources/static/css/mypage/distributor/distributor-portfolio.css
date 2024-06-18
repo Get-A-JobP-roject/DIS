@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+.portfolio-box {
+    position: relative;
+    max-width: calc(600px + 32px);
+    margin: 0 auto;
+    padding: 0 16px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.portfolio-container {
+    padding-bottom: 80px;
+}
+
+.portfolio-title {
+    font-size: 34px;
+    font-weight: 500;
+}
+
+
+.portfolio-modify-button-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 48px 0;
+}
+
+.portfolio-modify-button {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    border-color: transparent;
+    background-color: transparent;
+    border-radius: 4px;
+    width: initial;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #B5B5B5;
+}
+
+.portfolio-image-box {
+    width: 100%;
+}
+
+.portfolio-image-box img {
+    width: 100%;
+    height: 500px;
+}
+
+.portfolio-modfiy-modal-box {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    outline: 0px;
+    z-index: 1040;
+}
+
+.portfolio-modify-modal-background {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1040;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
+}
+
+.portfolio-modify-modal-content-box {
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    overflow-y: auto;
+}
+
+.portfolio-modify-modal-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 12px 20px;
+}
+
+.portfolio-modify-modal-container {
+    display: flex;
+    place-content: center;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    min-height: 100%;
+    position: relative;
+    pointer-events: auto;
+    z-index: 1050;
+}
+
+.portfolio-modify-modal-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+
+.portfolio-modify-modal-button-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.portfolio-input-box {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    user-select: none;
+    color: rgb(255, 255, 255);
+    border-color: rgb(0, 199, 174);
+    background-color: rgb(0, 199, 174);
+    font-size: 14px;
+    border-radius: 6px;
+    width: initial;
+    padding: 12px 16px;
+    height: 44px;
+}
+
+.portfolio-input-box input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+}
+
+.normal-portfolio-button {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    color: rgb(255, 255, 255);
+    border-color: rgb(0, 199, 174);
+    background-color: rgb(0, 199, 174);
+    padding: 7px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    width: initial;
+    height: 44px;
+}
+
+.portfolio-modify-cancel-button {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    border-color: transparent;
+    background-color: transparent;
+    padding: 0px;
+    font-size: 14px;
+    width: initial;
+    color: rgb(181, 181, 181);
+}
+
+.register-image-ul {
+    width: 100%;
+    align-items: center;
+    overflow-inline: auto;
+}
+
+.register-image-li {
+    display: inline-block;
+    position: relative;
+}
+
+.register-image {
+    width: 189px;
+    height: 189px;
+    object-fit: cover;
+}
+
+.cancel-circle {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
+    filter: invert(54%) sepia(50%) saturate(4322%) hue-rotate(328deg) brightness(108%) contrast(106%);;
+}
+
+.modal-active {
+    display: block;
+}

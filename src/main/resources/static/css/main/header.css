@@ -1,0 +1,465 @@
+@charset "utf-8";
+
+.header-box {
+    background-color: #fff;
+}
+
+.header-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 3.625rem;
+    padding: 1rem;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: .0625rem solid #f2f2f2;
+}
+
+.header-section-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50.625rem;
+    height: 100%;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    margin-top: 0.4rem;
+    height: 1.6875rem;
+}
+
+.header-menu-box {
+    display: flex;
+    margin: 0;
+}
+
+.header-menu-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    margin-left: 1.125rem;
+}
+
+.header-login-join-button-box {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.header-login-join-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-login-join-ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.header-login-join-li {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-login-join-li:last-child {
+    margin-left: 1.125rem;
+}
+
+.header-login-join-li a {
+    font-size: .875rem;
+}
+
+.header-distributor-join-button {
+    width: 6rem;
+    padding: .40625rem 0;
+    font-size: .875rem;
+    border-radius: 6px;
+    margin-left: 1rem;
+    cursor: pointer;
+    background-color: #00c7ae;
+    border-color: #00c7ae;
+}
+
+.header-distributor-join-button a {
+    font-weight: 500;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: .0625rem solid transparent;
+    line-height: 1.5;
+}
+
+.header-message-bell-box {
+    margin-left: 1rem;
+}
+
+.header-message-bell-button {
+    border: 0;
+    background: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    color: #323232;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+
+.header-message-bell-button img {
+    width: 1.4rem;
+}
+
+.header-member-menu-box {
+    position: relative;
+    margin-left: 1rem;
+}
+
+.header-member-picture-arrow {
+    width: 13px;
+    height: 13px;
+}
+
+.header-member-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-member-picture-box {
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem;
+}
+
+.header-member-picture {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: .0625rem solid #f2f2f2;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-color: #e1e1e1;
+}
+
+.header-member-picture {
+    background-image: url("/static/image/nomal-human.png");
+}
+
+.header-member-menu-dropdown {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(106%);
+    background-color: #fff;
+    border: .0625rem solid #e1e1e1;
+    border-radius: 4px;
+    padding: 1.3125rem;
+    width: 15rem;
+    overflow: visible;
+    box-shadow: 0 0 .625rem 0 rgba(0, 0, 0, .1);
+    text-align: left;
+}
+
+.header-member-login-menu-ul {
+    margin-top: 1rem;
+    font-size: .875rem;
+    line-height: 1.3125rem;
+    font-weight: 400;
+    letter-spacing: -.0125rem;
+}
+
+.header-member-login-menu-li {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -.9375rem;
+    margin-left: -.9375rem;
+    padding: .65625rem 0;
+    cursor: pointer;
+}
+
+.header-member-login-menu-li div {
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: .9375rem;
+    padding-left: .9375rem;
+}
+
+.header-logout-button-box {
+    font-size: .875rem;
+    line-height: 1.3125rem;
+    font-weight: 400;
+    letter-spacing: -.0125rem;
+    margin: 1.3125rem -1.3125rem -1.3125rem;
+    background-color: #fafafa;
+}
+
+.header-logout-button-box button {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    user-select: none;
+    vertical-align: middle;
+    padding: .59375rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    font-weight: 500;
+    transition: opacity .2s ease-in-out;
+}
+
+.header-member-menu-dropdown {
+    display: none;
+}
+
+.header-mobile-box {
+    display: none;
+}
+
+.header-mobile-member-menu-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    padding: 1.25rem;
+    z-index: 1050;
+    transform: translateX(-100%);
+    transition: transform .3s ease-in-out;
+    overflow-y: auto;
+}
+
+.member-menu-header-box {
+    text-align: right;
+    padding-bottom: 1.25rem;
+}
+
+.member-menu-out-button {
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.member-menu-out-button-img {
+    vertical-align: middle;
+    width: 25px;
+}
+
+.member-menu-login-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 1.25rem;
+    border-bottom: .0625rem solid #f2f2f2;
+}
+
+.header-member-name {
+    font-size: 1rem;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.no-login-box {
+    text-align: left;
+    cursor: pointer;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.no-login-box h4,
+.login-box h4 {
+    margin-bottom: .125rem;
+    line-height: 1.57;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.member-menu-login-button,
+.login-box p {
+    color: #737373;
+    line-height: 1.67;
+    font-size: .875rem;
+}
+
+.member-menu-login-button img {
+    margin: -.0625rem 0 .0625rem .1875rem;
+    width: 13px;
+    vertical-align: middle;
+}
+
+.login-box {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    text-align: left;
+}
+
+.member-profile-box {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+}
+
+.member-profile-container {
+    width: 2.75rem;
+    height: 2.75rem;
+    position: relative;
+}
+
+.member-profile {
+    background-image: url("/static/image/nomal-human.png");
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: .0625rem solid #f2f2f2;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-color: #e1e1e1;
+}
+
+.member-control-box {
+    margin-top: 1.5rem;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.member-control-container {
+    gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.member-menu-list-box, .menu-button-box {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.menu-button-box {
+    position: relative;
+    width: 100%;
+}
+
+
+.menu-button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: .0625rem solid transparent;
+    border-radius: .25rem;
+    font-weight: 500;
+    transition: opacity .2s ease-in-out;
+    width: 100%;
+    height: auto;
+    border-color: #f2f2f2;
+    color: #737373;
+    padding: .375rem 0;
+    font-size: .875rem;
+    line-height: 1.63;
+    cursor: pointer;
+}
+
+.member-menu-backgroud {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1040;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+
+.member-menu-list-container {
+    border-bottom: .0625rem solid #f2f2f2;
+    padding: .75rem 0;
+}
+
+.member-menu-list-container:last-child {
+    border: none;
+}
+
+.member-menu-list-li {
+    line-height: 1.57;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    padding: .75rem 0;
+}
+
+
+.member-menu-list-li a {
+    color: #323232;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .header-login-join-button-box {
+        display: none;
+    }
+
+    .header-web-menu-box {
+        display: none;
+    }
+
+    .header-mobile-box {
+        display: block;
+    }
+
+    .header-mobile-menu-icon-box img {
+        cursor: pointer;
+        vertical-align: middle;
+        width: 24px;
+    }
+
+    .logo-box {
+        margin: 0 auto;
+    }
+
+    .logo-box img {
+        height: 2rem;
+    }
+
+    .header-mobile-member-box {
+        display: block;
+    }
+}

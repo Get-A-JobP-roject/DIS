@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.dis.mapper.DistributorMapper">
+
+<!--    회원가입 -->
+    <insert id="insertDistributor" parameterType="distributorVO">
+        insert into tbl_distributor
+        (distributor_email, distributor_password, distributor_name, distributor_phone_number)
+        values (#{distributorEmail}, #{distributorPassword}, #{distributorName}, #{distributorPhoneNumber});
+    </insert>
+
+<!-- 이메일 중복 확인-->
+    <select id="findByDistributorEmail" resultType="Long">
+        select distributor_id from tbl_distributor
+        where distributor_email = #{distributorEmail}
+    </select>
+
+    <!-- 전화 번호 확인-->
+    <select id="findByDistributorPhoneNumber" resultType="Long">
+        select distributor_id from tbl_distributor
+        where distributor_phone_number = #{distributorPhoneNumber}
+    </select>
+
+    <!-- 로그인 -->
+    <select id="selectByDistributorEmailAndDistributorPassword" resultType="Long">
+        select distributor_id from tbl_distributor
+        where distributor_email = #{distributorEmail} and distributor_password = #{distributorPassword}
+    </select>
+
+    <!--정보 수정-->
+    <update id="updateBydistributorId">
+
+    </update>
+
+</mapper>

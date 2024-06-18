@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+.management-box {
+    position: relative;
+    max-width: calc(600px + 32px);
+    margin: 0 auto;
+    padding: 0 16px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.management-container {
+    padding-bottom: 80px;
+}
+
+.management-title {
+    margin: 48px 0;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.introduce-p {
+    margin: 0 0 24px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #F2F2F2;
+    color: #737373;
+    font-size: 12px;
+}
+
+.go-to-modfiy-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 24px 0;
+    border: 0 solid #F2F2F2;
+    border-bottom-width: 1px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #323232;
+    border-color: transparent;
+    background-color: transparent;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.management-account-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.management-account-title {
+    color: #737373;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.management-account-value {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.management-arrow-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.management-arrow-box img{
+    width: 16px;
+    height: 16px;
+    filter: invert(86%) sepia(1%) saturate(2859%) hue-rotate(353deg) brightness(86%) contrast(87%);
+}

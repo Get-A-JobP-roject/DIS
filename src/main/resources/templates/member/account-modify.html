@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/mypage/account-modify.css">
+    <title>마이페이지- 계정 설정</title>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="account-box">
+                <div id="header"></div>
+                <div class="account-container">
+                    <h1 class="account-title">계정 설정</h1>
+                    <div class="account-header-box">
+                        <div class="account-profile-box">
+                            <div class="account-profile-container">
+                                <div class="account-profile">
+                                    <img src="/static/image/nomal-human.png">
+                                </div>
+                                <button class="camera-button">
+                                    <img src="/static/image/carmera-icon.png">
+                                </button>
+                                <!-- 모달창 -->
+                                <div class="profile-modfiy-modal-box modal-active">
+                                    <div class="profile-modify-modal-container">
+                                        <div class="profile-modify-modal-content-box">
+                                            <div class="profile-modify-modal-content-container">
+                                                <h4 class="profile-modify-modal-title">프로필 사진 등록</h4>
+                                                <div class="profile-modify-modal-button-box">
+                                                    <label class="profile-input-box">
+                                                        사진 등록하기
+                                                        <input type="file">
+                                                    </label>
+                                                    <button class="normal-profile-button">기본 이미지로 변경</button>
+                                                    <button class="profile-modify-cancel-button">취소</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="profile-modify-modal-background"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <form action="">
+                            <div class="account-nickname-title-box">
+                                닉네임
+                                <!-- <button type="button" class="nickname-modify-button">수정</button> -->
+                            </div>
+                            <div class="account-nickname-box">
+                                <!-- <p class="account-nickname">헬로웅</p> -->
+                                <input type="text" placeholder="닉네임을 입력해주세요." class="nickname-input">
+                            </div>
+                            <div class="text-length-box">
+                                <span class="nickname-error"></span>
+                                <div class="text-length-container">
+                                    <span>1</span>
+                                    <span>/10자</span>
+                                </div>
+                            </div>
+                            <div class="account-nickname-button-box">
+                                <button type="button" class="cancel-button">취소</button>
+                                <button type="button" class="accept-button">수정하기</button>
+                            </div>
+                        </form>
+                    </div>
+                    <hr class="line">
+                    <ul class="account-menu-ul">
+                        <li class="account-menu-li">
+                            <a href="#" >
+                                개인 정보 관리
+                                <div class="account-arrow-box">
+                                    <img src="/static/image/arrow-icon.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="account-menu-li">
+                            <a href="#" >
+                                개인 정보 관리
+                                <div class="account-arrow-box">
+                                    <img src="/static/image/arrow-icon.png">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr class="line">
+                    <div class="etc-button-box">
+                        <button class="etc-button logout-button" type="button">로그아웃</button>
+                        <span>|</span>
+                        <button class="etc-button witdraw-button" type="button">계정 탈퇴</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

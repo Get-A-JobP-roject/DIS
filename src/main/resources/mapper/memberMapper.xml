@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.dis.mapper.MemberMapper">
+
+    <!-- 회원 가입  -->
+    <insert id="insertMember">
+        insert into tbl_member
+        (member_identification, member_password, member_name ,member_nickname,member_phone_number)
+        values (#{memberIdentification}, #{memberPassword}, #{memberName},#{memberNickname} ,#{memberPhoneNumber})
+    </insert>
+
+    <!-- 아이디 중복 체크 -->
+    <select id="findByMemberIdentification" parameterType="String" resultType="Long">
+        select member_id from tbl_member
+        where member_identification = #{memberIdentification}
+    </select>
+
+    <!-- 닉네임 중복 체크 -->
+    <select id="findByMemberNickname" parameterType="String" resultType="Long">
+        select member_id from tbl_member
+        where member_nickname = #{memberNickname}
+    </select>
+
+    <!--  핸드폰 중복 체크  -->
+    <select id="findByMemberPhoneNumber" parameterType="String" resultType="Long">
+        select member_id from tbl_member
+        where member_phone_number = #{memberPhoneNumber}
+    </select>
+
+    <!--  로그인  -->
+    <select id="selectByMemberIdentificationAndMemberPassword" resultType="Long">
+        select member_id from tbl_member
+        where member_identification  = #{memberIdentification} and member_password = #{memberPassword}
+    </select>
+</mapper>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/join/join.css">
+    <link rel="icon" href="/image/favicon.png">
+    <title>일반 사용자 - 회원가입</title>
+</head>
+<body>
+<div class="box">
+    <div class="container">
+        <div id="header"></div>
+        <div class="join-box">
+            <div class="join-container">
+                <div class="join-logo-box">
+                    <img src="/image/logo.png">
+                </div>
+                <div class="join-input-box">
+                    <form th:action="@{/member/join}" method="post" th:object="${memberVO}">
+                        <div class="join-form-box">
+
+                            <div class="join-form-container">
+                                <fieldset class="join-form-group">
+                                    <legend class="input-title">이름</legend>
+                                    <div>
+                                        <input type="text" class="input-text input-name" name="memberName"
+                                               placeholder="이름을 입력해주세요." th:field="*{memberName}" maxlength="4">
+                                        <div class="error-msg name-error"></div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="join-form-container">
+                                <fieldset class="join-form-group">
+                                    <legend class="input-title">닉네임</legend>
+                                    <div>
+                                        <input type="text" class="input-text input-name" name="memberNickname"
+                                               placeholder="닉네임을 입력해주세요." th:field="*{memberNickname}">
+                                        <div class="error-msg nickname-error"></div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="join-form-container">
+                                <fieldset class="join-form-group">
+                                    <legend class="input-title">아이디</legend>
+                                    <div>
+                                        <input type="text" class="input-text input-name" name="memberIdentification"
+                                               placeholder="아이디를 입력해주세요." th:field="*{memberIdentification}">
+                                        <div class="error-msg id-error"></div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="join-form-container">
+                                <fieldset class="join-form-group">
+                                    <legend class="input-title">비밀번호</legend>
+                                    <div style="position:relative;">
+                                        <input type="password" class="input-text input-password" name="memberPassword"
+                                               placeholder="영문+숫자 조합 8자리 이상 입력해주세요." th:field="*{memberPassword}">
+                                        <button type="button" class="sub-button show password-show-button">표시</button>
+                                    </div>
+                                    <div class="error-msg password-error"></div>
+                                </fieldset>
+                            </div>
+
+                            <div class="join-form-container">
+                                <fieldset class="join-form-group">
+                                    <legend class="input-title">핸드폰 번호</legend>
+                                    <div style="position:relative;">
+                                        <input type="text" class="input-text input-phoneNumber" name="memberPhoneNumber"
+                                               placeholder="ex)01012341234" maxlength="11"
+                                               th:field="*{memberPhoneNumber}">
+                                        <button type="button" class="sub-button certification-button">인증</button>
+                                    </div>
+                                    <div class="error-msg phoneNumber-error sub-error-msg"></div>
+                                    <div class="code-box" style="position:relative;">
+                                        <input type="text" class="input-text input-code" name="number"
+                                               placeholder="인증 번호를 입력해주세요.">
+                                        <button type="button" class="sub-button check-code-button">확인</button>
+                                    </div>
+                                    <div class="error-msg code-error"></div>
+                                </fieldset>
+                            </div>
+
+                            <div class="join-form-button-box">
+                                <button type="submit" class="join-button" disabled>회원가입</button>
+                                <a href="/distributor/distributor-join" class="distributor-join-a">유통업체로 가입하시나요?</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script>
+    globalThis.code;
+</script>
+<script src="/js/main/member-join-service.js"></script>
+<script src="/js/main/check.js"></script>
+<script src="/js/main/password-button.js"></script>
+<script src="/js/main/member-join.js"></script>
+</html>

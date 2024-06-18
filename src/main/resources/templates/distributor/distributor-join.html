@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main/header.css">
+    <link rel="stylesheet" href="/css/join/join.css">
+    <link rel="icon" href="/image/favicon.png">
+    <title>일반 사용자 - 회원가입</title>
+</head>
+
+<body>
+<div class="box">
+    <div class="container">
+        <div class="join-box">
+            <th:block th:replace="~{main/header :: header}"></th:block>
+            <div class="join-container">
+                <div class="join-logo-box">
+                    <img src="/image/logo.png">
+                </div>
+                <div class="join-input-box">
+                    <form th:action="@{/distributor/join}" method="post" th:object="${distributorVO}">
+                        <div class="join-form-box">
+
+                            <div class="join-form-container">
+                                <fieldset class="join-form-group">
+                                    <legend class="input-title">업체명</legend>
+                                    <div>
+                                        <input type="text" class="input-text input-name" name="distributorName"
+                                               placeholder="업체명을 입력해주세요." th:field="*{distributorName}">
+                                        <div class="error-msg name-error"></div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="join-form-container">
+                                <fieldset class="join-form-group">
+                                    <legend class="input-title">이메일</legend>
+                                    <div>
+                                        <input type="text" class="input-text input-name" name="distributorEmail"
+                                               placeholder="이메일을 입력해주세요." th:field="*{distributorEmail}">
+                                        <div class="error-msg email-error"></div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="join-form-container">
+                                <fieldset class="join-form-group">
+                                    <legend class="input-title">비밀번호</legend>
+                                    <div style="position:relative;">
+                                        <input type="password" class="input-text input-password"
+                                               name="distributorPassword" placeholder="영문+숫자 조합 8자리 이상 입력해주세요."
+                                               th:field="*{distributorPassword}">
+                                        <button type="button" class="sub-button show password-show-button" >표시</button>
+                                    </div>
+                                    <div class="error-msg password-error"></div>
+                                </fieldset>
+                            </div>
+
+                            <div class="join-form-container">
+                                <fieldset class="join-form-group">
+                                    <legend class="input-title">전화 번호</legend>
+                                    <div style="position:relative;">
+                                        <input type="text" class="input-text input-phoneNumber"
+                                               name="distributorPhoneNumber" placeholder="전화 번호를 입력해주세요." maxlength="11"
+                                               th:field="*{distributorPhoneNumber}">
+                                        <div class="error-msg password-error"></div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="join-form-button-box">
+                                <button type="submit" class="join-button" disabled>회원가입</button>
+                                <a href="/member/member-join" class="distributor-join-a">일반 사용자로 가입하시나요?</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="/js/main/header.js"></script>
+<script src="/js/main/check.js"></script>
+<script src="/js/main/password-button.js"></script>
+<script>
+    $input = $(".input-text");
+    $errorMsg = $(".error-msg");
+    let check = [false, false, false, false];
+
+    // ---------------------------------------------------------------------
+    //  업체명 JS --- (0)
+    let $inputName = $input.eq(0);
+
+    $inputName.blur(() => {
+        check[0] = false;
+
+        if (!$inputName.val()) {
+            $errorMsg.eq(0).text("업체명을 입력해주세요.");
+        } else {
+            $errorMsg.eq(0).text("");
+            check[0] = true;
+        }
+        allCheck();
+    });
+
+    // 이메일 확인 (1)
+    let $inputEmail = $input.eq(1);
+
+    $inputEmail.blur(() => {
+        const regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+        joinService.emailCheck($inputEmail.val(),function (result) {
+            check[1] = false;
+            if (!$inputEmail.val()) {
+                $errorMsg.eq(1).text("이메일을 입력하세요.");
+
+            }else if(!regEmail.test($inputEmail.val())) {
+                $errorMsg.eq(1).text("올바른 이메일을 입력하세요.");
+
+            }else if(result){
+                $errorMsg.eq(1).text("중복된 이메일입니다.");
+
+            }else {
+                $errorMsg.eq(1).text("");
+                check[1] = true;
+
+            }
+            allCheck();
+        });
+
+
+    });
+
+    // 비밀번호 검사 --- (2)
+    let $inputPassword = $input.eq(2);
+    const regPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
+
+    $inputPassword.blur(() => {
+        check[2] = false;
+        if (!$inputPassword.val()) {
+            $errorMsg.eq(2).text("비밀번호를 입력해주세요.");
+
+        } else if (!regPassword.test($inputPassword.val())) {
+            $errorMsg.eq(2).text("영문+숫자 조합 8자리 이상 입력해주세요.");
+        } else {
+            $errorMsg.eq(2).text("");
+            check[2] = true;
+        }
+        allCheck();
+    });
+
+    // 전화번호 검사 (3)
+    let $inputPhoneNumber = $input.eq(3);
+    const regPhoneNumber = /^0\d{1,2}\d{3,4}\d{4}$/;
+
+    $inputPhoneNumber.blur(() => {
+        check[3] = false;
+
+        joinService.phoneNumberCheck($inputPhoneNumber.val(), function(result){
+            if(!$inputPhoneNumber.val()){
+                $errorMsg.eq(3).text("전화번호를 입력해주세요.");
+
+            }else if(!regPhoneNumber.test($inputPhoneNumber.val())){
+                $errorMsg.eq(3).text("(-) 하이픈을 뺀 11자리로 입력해주세요.");
+
+            }else if(result){
+                $errorMsg.eq(3).text("이미 등록된 전화번호입니다.");
+
+            }else {
+                $errorMsg.eq(3).text("");
+                check[3] = true;
+
+            }
+
+            allCheck();
+        })
+
+    })
+
+    // ---------------------------------------------------------------------
+    let joinService = (function () {
+
+        function emailCheck(email, callback) {
+            $.ajax({
+                url: "/rest-distributor/email-check/" + email,
+                type: "get",
+                success: function (result) {
+                    callback(result);
+                }
+            });
+        }
+
+        function phoneNumberCheck(phoneNumber, callback) {
+            $.ajax({
+                url: "/rest-distributor/phone-number-check" + phoneNumber,
+                type: "get",
+                success: function (result) {
+                    callback(result);
+                }
+            });
+        }
+
+        return {
+            emailCheck: emailCheck,
+            phoneNumberCheck: phoneNumberCheck
+        }
+    })();
+
+</script>
+
+</html>
