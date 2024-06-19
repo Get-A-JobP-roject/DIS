@@ -26,7 +26,6 @@
 }
 
 .board-title-input-box {
-    padding-left: 10px;
     width: 100%;
 }
 
@@ -101,4 +100,28 @@
     width: 20px;
     height: 20px;
     filter: invert(54%) sepia(50%) saturate(4322%) hue-rotate(328deg) brightness(108%) contrast(106%);;
+}
+
+.button-box {
+    margin: 10px 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit-button {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    padding: 8px 0px;
+    width: 120px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    background-color: #FFCD4A;
+    color: rgb(255, 255, 255);
 }
