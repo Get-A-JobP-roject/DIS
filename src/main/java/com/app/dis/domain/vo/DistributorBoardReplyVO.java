@@ -11,11 +11,12 @@ import java.time.LocalDateTime;
 @Getter
 public class DistributorBoardReplyVO {
 
-    Long distributorBoardReplyId;
-    Long distributorBoardId;
-    Long memberId;
-    Long distributorId;
-    String distributorBoardReplyContent;
-    LocalDateTime distributorBoardReplyRegisterDate;
-    LocalDateTime distributorBoardReplyUpdateDate;
+    private Long distributorBoardReplyId;
+    private DistributorBoardVO distributorBoard;
+    private MemberVO memberVO;
+    private DistributorVO distributorVO;
+    private String distributorBoardReplyContent;
+    private LocalDateTime distributorBoardReplyRegisterDate;
+    private LocalDateTime distributorBoardReplyUpdateDate;
+
 }
